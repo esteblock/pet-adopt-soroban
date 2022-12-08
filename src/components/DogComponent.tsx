@@ -37,7 +37,7 @@ export function DogComponent (
           <Typography>Age: {age}</Typography>
           <Typography>Breed: {breed}</Typography>
           <Typography>Location: {location}</Typography>
-          <Typography>Adopted: Not yet</Typography>
+          <Typography>Adopted: Not yet 😥</Typography>
         </Typography>
       </CardContent>
       <CardActions>
