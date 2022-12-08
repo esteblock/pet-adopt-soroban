@@ -19,14 +19,9 @@ export interface DogComponentProps {
 export function DogComponent (
     {name, age, breed, id, location, picture}:
         DogComponentProps){
-//     <div key={id}>
-//     id: {id}
-//     Name: {name}
-//     Age: {age}
-//     Breed: {breed}
-// </div>
 
     return (
+    
     <Card key={id} sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
