@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.17",
     "@soroban-react/chains": "^1.0.0",
+    "@soroban-react/contracts": "^1.0.0",
     "@soroban-react/core": "^1.0.4",
     "@soroban-react/types": "^1.0.0",
     "@soroban-react/wallet-data": "^1.0.6",
