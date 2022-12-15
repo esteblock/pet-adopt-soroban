@@ -1,4 +1,4 @@
-# Chapter 3. Write the blockchain when adopting a pet.
+# Chapter 5. Write the blockchain when adopting a pet.
 
 
 Currently, when you press the "Adopt it now!" button, nothing happens. This is because we have a button that does not do anything:
@@ -17,7 +17,7 @@ To change this, we will create a function component that will interact with the 
 yarn add soroban-client
 ```
 
-## 3.1 Function Component
+## 5.1 Function Component
 Let's create a function component with a function that will interact with the blockchain
 
 Create the  `pet-adopt-soroban/src/soroban/AdoptPetButton.tsx` file and paste
@@ -83,7 +83,7 @@ export function AdoptPetButton ({id}: AdoptPetButtonProps){
 ```
 
 
-## 3.2 Replace your dummy button for the new button created:
+## 5.2 Replace your dummy button for the new button created:
 
 In the `pet-adopt-soroban/src/components/DogComponent.tsx` file, change
 ```javascript
@@ -106,22 +106,22 @@ for
 <AdoptPetButton id={id}></AdoptPetButton>
 ```
 
-## 3.3 Fund your Frighter account
+## 5.3 Fund your Frighter account
 
 Before signing messages, you need to have some XMR in your wallet. Go to the browser and paste:
 
 http://localhost:8000/friendbot?addr=YOURADDRESS
 where YOURADDRESS is your G... public key.
 
-## 3.4 Adopt your favourite pet!
-## 3.5 Check it
+## 5.4 Adopt your favourite pet!
+## 5.5 Check it
 Check that in the front end, now the pet has been adopted!
 
 Your code should look like here:
 
-https://github.com/esteblock/pet-adopt-soroban/tree/final-chapter3
+https://github.com/esteblock/pet-adopt-soroban/tree/final-chapter5
 
-## 3.6 Help
+## 5.6 Help
 Go to https://github.com/esteblock/pet-adopt-soroban/issues
 and let's continue the discussion!
 
