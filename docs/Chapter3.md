@@ -13,6 +13,10 @@ Currently, when you press the "Adopt it now!" button, nothing happens. This is b
 To change this, we will create a function component that will interact with the blockchain using the
 [@soroban-react/contracts](https://github.com/esteblock/soroban-react) package
 
+```
+yarn add soroban-client
+```
+
 ## 3.1 Function Component
 Let's create a function component with a function that will interact with the blockchain
 
