@@ -478,6 +478,14 @@
   resolved "https://registry.yarnpkg.com/@soroban-react/types/-/types-1.0.0.tgz#2ee270c97d7fa941c8a756c1c518759af52a1273"
   integrity sha512-N7I0OroI7EvJ16BDSt6wkWGfDBElUZpBUTV+enw9KIL8D/77rhPUtUr1RoqQcXy2TGCFFBtR8RbClVxZXDMbWQ==
 
+"@soroban-react/utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@soroban-react/utils/-/utils-1.0.0.tgz#8ebbe199e0a2d83be7a6efa7ee8c16697304ae2d"
+  integrity sha512-n2KyGqD4wD3Dg5p+U1mmXjg9aGLaUGaTyZ1uxrwFgXacvUyfQ2wwBw1JCKiUOqg0fV92BYen2WRhc0gmnbITkQ==
+  dependencies:
+    bignumber.js "^9.1.1"
+    soroban-client "^0.2.1"
+
 "@soroban-react/wallet-data@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@soroban-react/wallet-data/-/wallet-data-3.0.0.tgz#8e3b2db4375a9a26e17394c9cdb5e3abfeef3766"
@@ -765,7 +773,7 @@ bignumber.js@^4.0.0:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.1.0.tgz#db6f14067c140bd46624815a7916c92d9b6c24b1"
   integrity sha512-eJzYkFYy9L4JzXsbymsFn3p54D+llV27oTQ+ziJG7WFRheJcNZilgVXMG0LoZtlQSKBsJdWtLFqOD0u+U0jZKA==
 
-bignumber.js@^9.1.0:
+bignumber.js@^9.1.0, bignumber.js@^9.1.1:
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.1.tgz#c4df7dc496bd849d4c9464344c1aa74228b4dac6"
   integrity sha512-pHm4LsMJ6lzgNGVfZHjMoO8sdoRhOzOH4MLmY65Jg70bpxCKu5iOHNJyfF6OyvYw7t8Fpf35RuzUyqnQsj8Vig==

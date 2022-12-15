@@ -1,7 +1,6 @@
 import React from "react";
 import * as SorobanClient from "soroban-client";
 import { SorobanContextType } from "@soroban-react/core";
-import * as convert from '../utils/convert'
 
 let xdr = SorobanClient.xdr; 
  
@@ -90,12 +89,10 @@ async function fetchContractValue(
     const contract = new SorobanClient.Contract(contractId);
 
     let myParams: SorobanClient.xdr.ScVal[] = params || [];
-    console.log("myParams: ", convert.scvalToBigNumber(myParams[0]).toNumber())
 
 
     // TODO: Optionally include the wallet of the submitter here, so the
   // simulation is more accurate
-  console.log("myfee: ")
   const transaction = new SorobanClient.TransactionBuilder( source, {
       // fee doesn't matter, we're not submitting
       fee: "100",
@@ -107,6 +104,7 @@ async function fetchContractValue(
 
   console.log("transaction: ", transaction)
   console.log("transaction.toXDR(): ", transaction.toXDR())
+  console.log("some results: ", server.getContractData(contractId, ))
   const allResults = await server.simulateTransaction(transaction);
   console.log("allResults: ", allResults)
   const { results } = allResults
