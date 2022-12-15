@@ -121,4 +121,4 @@ Adopted: Not yet 😥
 
 ln -s ./contracts/soroban/pet_adopt_id ./src/soroban/pet_adopt_id
 
-echo "{"pet_adopt_id": "$(cat contracts/.soroban/pet_adopt_id)"}" > src/soroban/addresses.json
+echo "{\"pet_adopt_id\": \"$(cat contracts/.soroban/pet_adopt_id)\"}" > src/soroban/addresses.json

@@ -1,12 +1,13 @@
 import React from "react";
 import * as SorobanClient from "soroban-client";
 import { SorobanContextType } from "@soroban-react/core";
+import * as convert from '../utils/convert'
 
 let xdr = SorobanClient.xdr; 
  
 // Dummy source account for simulation.
 // TODO: Allow the user to specify this
-//const source = new SorobanClient.Account('GCEZWKCA5VLDNRLN3RPRJMRZOX3Z6G5CHCGSNFHEYVXM3XOJMDS674JZ', '0');
+const source = new SorobanClient.Account('GCEZWKCA5VLDNRLN3RPRJMRZOX3Z6G5CHCGSNFHEYVXM3XOJMDS674JZ', '0');
 
 
 export type ContractValueType = {
@@ -30,6 +31,8 @@ export function useContractValue(
   {contractId, method, params, sorobanContext}: useContractValueProps): ContractValueType {
 
   const { activeChain, server } = sorobanContext
+
+  console.log("server: ", server)
   const [value, setValue] = React.useState<ContractValueType>({ loading: true });
   const [xdrParams, setXdrParams] = React.useState<any>(params ? params.map(p => p.toXDR().toString('base64')) : undefined)
 
@@ -87,10 +90,13 @@ async function fetchContractValue(
     const contract = new SorobanClient.Contract(contractId);
 
     let myParams: SorobanClient.xdr.ScVal[] = params || [];
+    console.log("myParams: ", convert.scvalToBigNumber(myParams[0]).toNumber())
+
 
     // TODO: Optionally include the wallet of the submitter here, so the
   // simulation is more accurate
-  const transaction = new SorobanClient.TransactionBuilder( {
+  console.log("myfee: ")
+  const transaction = new SorobanClient.TransactionBuilder( source, {
       // fee doesn't matter, we're not submitting
       fee: "100",
       networkPassphrase,
@@ -99,7 +105,12 @@ async function fetchContractValue(
     .setTimeout(SorobanClient.TimeoutInfinite)
     .build();
 
-  const { results } = await server.simulateTransaction(transaction);
+  console.log("transaction: ", transaction)
+  console.log("transaction.toXDR(): ", transaction.toXDR())
+  const allResults = await server.simulateTransaction(transaction);
+  console.log("allResults: ", allResults)
+  const { results } = allResults
+  console.log("results: ", results)
   if (!results || results.length !== 1) {
     throw new Error("Invalid response from simulateTransaction");
   }
