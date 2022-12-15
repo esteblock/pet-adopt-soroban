@@ -1,6 +1,6 @@
 import React from "react";
 import * as SorobanClient from "soroban-client";
-import { useSorobanReact } from "@soroban-react/core";
+import { SorobanContextType } from "@soroban-react/core";
 export type TransactionStatus = 'idle' | 'error' | 'loading' | 'success';
 
 
@@ -51,16 +51,25 @@ export interface SendTransactionOptions {
   timeout?: number;
   skipAddingFootprint?: boolean
   secretKey?: string;
+  sorobanContext: SorobanContextType
 }
 
 // useSendTransaction is a hook that returns a function that can be used to
 // send a transaction. Upon sending, it will poll server.getTransactionStatus,
 // until the transaction succeeds/fails, and return the result.
 export function useSendTransaction<E = Error>(defaultTxn?: Transaction, defaultOptions?: SendTransactionOptions): SendTransactionResult<E> {
-  const { activeChain, activeWallet, server } = useSorobanReact()
-  const [status, setState] = React.useState<TransactionStatus>('idle');
+  
+    if (!defaultOptions) {
+      throw new Error("No sorobanContext passed to sendTransaction");
+    }
 
+    const sorobanContext =  defaultOptions.sorobanContext
+    const { activeChain, activeWallet, server } = sorobanContext
+    const [status, setState] = React.useState<TransactionStatus>('idle');
+  
+  
   const sendTransaction = React.useCallback(async function(passedTxn?: Transaction, passedOptions?: SendTransactionOptions): Promise<SorobanClient.xdr.ScVal> {
+
     let txn = passedTxn ?? defaultTxn;
     if (!txn || !activeWallet || !activeChain) {
       throw new Error("No transaction or wallet or chain");

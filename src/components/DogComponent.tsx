@@ -4,9 +4,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Typography } from '@mui/material';
-import {AdoptPetButton} from './AdoptPetButton';
+import {AdoptPetButton} from '../soroban/AdoptPetButton';
 import { isPetAdopted } from '../soroban/isPetAdopted';
-import {adoptPet} from '../soroban/adoptPet'
 import { useSorobanReact } from '@soroban-react/core';
 
 export interface DogComponentProps {
