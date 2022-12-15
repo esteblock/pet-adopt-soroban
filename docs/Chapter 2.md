@@ -150,3 +150,5 @@ export default function ButtonAppBar() {
 }
 
 ```
+## 2.5 Check your code!
+Your code should look like this:
