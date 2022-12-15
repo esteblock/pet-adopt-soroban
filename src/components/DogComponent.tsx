@@ -4,7 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Typography } from '@mui/material';
-import {AdoptPetButton} from '../soroban/AdoptPetButton';
+import Button from '@mui/material/Button'
 import { isPetAdopted } from '../soroban/isPetAdopted';
 import { useSorobanReact } from '@soroban-react/core';
 
@@ -47,7 +47,9 @@ export function DogComponent (
         </Typography>
       </CardContent>
       <CardActions>
-        <AdoptPetButton id={id}></AdoptPetButton>
+      <Button size="small" variant="contained">
+  Adopt it now! ❤️
+</Button>
       </CardActions>
     </Card>
   );
