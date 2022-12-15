@@ -112,6 +112,11 @@ where YOURADDRESS is your G... public key.
 ## 3.4 Adopt your favourite pet!
 ## 3.5 Check it
 Check that in the front end, now the pet has been adopted!
+
+Your code should look like here:
+
+https://github.com/esteblock/pet-adopt-soroban/tree/final-chapter3
+
 ## 3.6 Help
 Go to https://github.com/esteblock/pet-adopt-soroban/issues
 and let's continue the discussion!
