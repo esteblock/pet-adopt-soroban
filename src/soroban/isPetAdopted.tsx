@@ -1,6 +1,6 @@
 import { SorobanContextType } from '@soroban-react/core';
 import addresses from './addresses.json'
-import {useContractValue, useContractValueProps} from './useContractValue'
+import {useContractValue, useContractValueProps} from '@soroban-react/contracts'
 import BigNumber from 'bignumber.js'
 import {bigNumberToI128} from '@soroban-react/utils'
 

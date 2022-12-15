@@ -31,7 +31,6 @@ export function useContractValue(
 
   const { activeChain, server } = sorobanContext
 
-  console.log("server: ", server)
   const [value, setValue] = React.useState<ContractValueType>({ loading: true });
   const [xdrParams, setXdrParams] = React.useState<any>(params ? params.map(p => p.toXDR().toString('base64')) : undefined)
 

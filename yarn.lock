@@ -439,10 +439,10 @@
   dependencies:
     "@soroban-react/core" "^3.0.0"
 
-"@soroban-react/contracts@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@soroban-react/contracts/-/contracts-1.0.3.tgz#8236619c0d55ede633e98142c5b00175600a84ff"
-  integrity sha512-Oi82ySfd1Yg05qIpYOEDLrtfPwTuBWtcgEPyALZb87E5szr0ByQoFsQlOYLs17kDsPrIM32BQiQJ+MpQ7BnDUw==
+"@soroban-react/contracts@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@soroban-react/contracts/-/contracts-1.1.0.tgz#2f0f81bff2caa2b8057b24a738645325e61a7ece"
+  integrity sha512-YeZ2p7Je78X0KstESxmGQnThgnq+UrXTxKqTFI0KaANt3e4tSna9FXLDWTcxHX0MkJi/eStMgNhIRPF9ctstLw==
   dependencies:
     "@soroban-react/core" "^1.0.4"
     soroban-client "^0.2.1"
