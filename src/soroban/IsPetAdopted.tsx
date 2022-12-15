@@ -1,19 +1,31 @@
 import * as React from 'react';
 import { useSorobanReact } from '@soroban-react/core';
-import { constants } from 'fs/promises';
+import addresses from './addresses.json'
+import {useContractValue, useContractValueProps} from './useContractValue'
 
-export interface IsPetAdoptedProps {
+
+interface IsPetAdoptedProps {
     id: number,
 }
 
 
 export function IsPetAdopted ({id}: IsPetAdoptedProps){
 
+    console.log(addresses.pet_adopt_id)
     const sorobanContext = useSorobanReact()
-    const isAdopted = (id: number): boolean => {
+    const useIsAdopted = (id: number): boolean => {
         
         // useContractValue(Constants.CrowdfundId, 'deadline')
-        console.log(id)
+       
+
+            console.log(useContractValue({
+                            contractId: addresses.pet_adopt_id,
+                            method: 'adopted',
+                            sorobanContext: sorobanContext}))
+       
+
+       
+
         console.log(sorobanContext)
         if(id % 2 == 0) {
             return true
@@ -23,8 +35,17 @@ export function IsPetAdopted ({id}: IsPetAdoptedProps){
         }
     }
 
+    let is
+    try{
+
+        const is = useIsAdopted(id) 
+    }
+    catch(error){
+        console.log("error: ", error)
+    }
+
     return (
     
-    <>Adopted: {isAdopted(id) ? "Yes 🥰!" : "Not yet 😥" }</>
+    <>Adopted: {is ? "Yes 🥰!" : "Not yet 😥" }</>
   );
 }

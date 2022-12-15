@@ -95,3 +95,30 @@ As expected, you'll see that if no one has adopted the pet, the current adopter 
 ```
 
 # Read the Smart Contract from the ReactJS front end (webpage)
+
+As you can see, the src/components/DogComnent.tsx file, it's hardcoded and says
+"Adopted: Not yet 😥" for every pet. We will change this
+
+## Add a function that given a ped id, will read the blockchain and will see if the pet has been adopted or not:
+To be able to interact with smart contracts, we need to install the @soroban-react/contracts package
+```
+yarn add @soroban-react/contracts
+```
+Create a the new file src/soroban/readContract.tsx and paste:
+
+```
+```
+
+then in add the line `import { isPetAdopted } from '../soroban/readContract';
+`
+and change
+```
+Adopted: Not yet 😥
+```
+
+
+## symbolic link
+
+ln -s ./contracts/soroban/pet_adopt_id ./src/soroban/pet_adopt_id
+
+echo "{"pet_adopt_id": "$(cat contracts/.soroban/pet_adopt_id)"}" > src/soroban/addresses.json
