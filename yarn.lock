@@ -439,6 +439,23 @@
   dependencies:
     "@soroban-react/core" "^3.0.0"
 
+"@soroban-react/contracts@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@soroban-react/contracts/-/contracts-1.0.3.tgz#8236619c0d55ede633e98142c5b00175600a84ff"
+  integrity sha512-Oi82ySfd1Yg05qIpYOEDLrtfPwTuBWtcgEPyALZb87E5szr0ByQoFsQlOYLs17kDsPrIM32BQiQJ+MpQ7BnDUw==
+  dependencies:
+    "@soroban-react/core" "^1.0.4"
+    soroban-client "^0.2.1"
+
+"@soroban-react/core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@soroban-react/core/-/core-1.0.4.tgz#77ef5556cffbf1b89d799c6dd0b45bf0c716cdfb"
+  integrity sha512-fCbCsq+z5mhphjs7/mIf4PmNWwHPJ6LF9q2+JsHhHB38mRTCRxzofNF6KnC2rDwy51A+RARuR8wkZlhzvxDSKw==
+  dependencies:
+    "@soroban-react/freighter" "^1.0.0"
+    "@soroban-react/types" "1.0.0"
+    soroban-client "^0.2.0"
+
 "@soroban-react/core@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@soroban-react/core/-/core-3.0.0.tgz#999f867d64825aa129817a4a2c1dd954ed6be3eb"
@@ -2254,7 +2271,7 @@ sodium-native@^3.3.0:
   dependencies:
     node-gyp-build "^4.3.0"
 
-soroban-client@^0.2.1:
+soroban-client@^0.2.0, soroban-client@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/soroban-client/-/soroban-client-0.2.1.tgz#c90686a623e53f0bd7fd965e27d2f476f210d891"
   integrity sha512-80vNTY6gkkyfTvCHAJTPPnkl+nDH6hjtFrIIdw0QB3PeVz9P8w/UaOSzxj+Zf8yPSYSHiVegXe7px+D+pXHRfw==
