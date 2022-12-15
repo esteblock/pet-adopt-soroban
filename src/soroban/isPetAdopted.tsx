@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useSorobanReact } from '@soroban-react/core';
+import { SorobanContextType } from '@soroban-react/core';
 import addresses from './addresses.json'
 import {useContractValue, useContractValueProps} from './useContractValue'
 import BigNumber from 'bignumber.js'
@@ -7,16 +6,11 @@ import {bigNumberToI128} from '@soroban-react/utils'
 
 interface IsPetAdoptedProps {
     id: number,
+    sorobanContext: SorobanContextType
 }
 
 
-export function IsPetAdopted ({id}: IsPetAdoptedProps){
-
-    const sorobanContext = useSorobanReact()
-    const useIsAdopted = (id: number): boolean => {
-        
-       
-        
+export function isPetAdopted ({id, sorobanContext}: IsPetAdoptedProps){
             let id_BN = new BigNumber(id)
             let id_scval = bigNumberToI128(id_BN.shiftedBy(0).decimalPlaces(0))
             let isAdopted = false
@@ -36,8 +30,4 @@ export function IsPetAdopted ({id}: IsPetAdoptedProps){
     }
 
 
-    return (
     
-    <>Adopted: {useIsAdopted(id)  ? "Yes 🥰!" : "Not yet 😥" }</>
-  );
-}

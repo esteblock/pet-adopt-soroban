@@ -5,7 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { IsPetAdopted } from '../soroban/IsPetAdopted';
+import { isPetAdopted } from '../soroban/isPetAdopted';
+import {adoptPet} from '../soroban/adoptPet'
+import { useSorobanReact } from '@soroban-react/core';
 
 export interface DogComponentProps {
     id: number,
@@ -20,6 +22,8 @@ export interface DogComponentProps {
 export function DogComponent (
     {name, age, breed, id, location, picture}:
         DogComponentProps){
+
+    const sorobanContext = useSorobanReact()
 
     return (
     
@@ -38,11 +42,17 @@ export function DogComponent (
           <Typography>Age: {age}</Typography>
           <Typography>Breed: {breed}</Typography>
           <Typography>Location: {location}</Typography>
-          <Typography><IsPetAdopted id={id}/></Typography>
+          <Typography> Adopted: {
+          isPetAdopted({id: id, sorobanContext: sorobanContext})  ? "Yes 🥰!" : "Not yet 😥" 
+          } </Typography>
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained">
+        <Button size="small" variant="contained" onClick={()=>{ 
+          adoptPet({
+            id: id,
+            sorobanContext: sorobanContext
+          })}}>
             Adopt it now! ❤️
         </Button>
       </CardActions>
