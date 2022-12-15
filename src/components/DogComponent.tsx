@@ -47,7 +47,7 @@ export function DogComponent (
         </Typography>
       </CardContent>
       <CardActions>
-        <AdoptPetButton id={id} sorobanContext={sorobanContext}></AdoptPetButton>
+        <AdoptPetButton id={id}></AdoptPetButton>
       </CardActions>
     </Card>
   );

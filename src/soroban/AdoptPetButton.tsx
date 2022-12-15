@@ -1,5 +1,5 @@
 import React from 'react'
-import { SorobanContextType } from "@soroban-react/core"
+import {useSorobanReact } from "@soroban-react/core"
 import Button from '@mui/material/Button';
 import {useSendTransaction, contractTransaction} from '@soroban-react/contracts'
 import * as SorobanClient from 'soroban-client'
@@ -8,11 +8,11 @@ import addresses from '../soroban/addresses.json'
 
 interface AdoptPetButtonProps {
     id: number,
-    sorobanContext: SorobanContextType
 }
 
 
-export function AdoptPetButton ({id, sorobanContext}: AdoptPetButtonProps){
+export function AdoptPetButton ({id}: AdoptPetButtonProps){
+    const sorobanContext =  useSorobanReact()
     const { sendTransaction } = useSendTransaction(undefined, {sorobanContext})
     const { activeChain, server, address } = sorobanContext
     
