@@ -1,9 +1,11 @@
-# Clone de smart contracts repo
+# Chapter 3: Deploy the Smart Contract
+
+## 3.1 Clone de smart contracts repo
 ```
 git submodule add https://github.com/esteblock/pet-adopt-soroban-contracts contracts
 ```
 
-# Build the contract
+## 3.2 Build the contract
 ```
 cargo build --target wasm32-unknown-unknown --release
 ```
