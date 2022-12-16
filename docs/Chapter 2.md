@@ -150,5 +150,15 @@ export default function ButtonAppBar() {
 }
 
 ```
+
+## Should look like this
+When you dont have your wallet connected, should propose to connect your wallet:
+
+![Without wallet](./img/without-wallet.png "Without wallet")
+
+When you have your wallet connected, should show your address and network
+
+![With wallet](./img/with-wallet.png "With wallet")
 ## 2.5 Check your code!
 Your code should look like this:
+https://github.com/esteblock/pet-adopt-soroban/tree/final-chapter2
