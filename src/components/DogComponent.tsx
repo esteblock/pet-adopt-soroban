@@ -5,7 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button'
-import { useSorobanReact } from '@soroban-react/core';
 
 export interface DogComponentProps {
     id: number,
@@ -20,8 +19,6 @@ export interface DogComponentProps {
 export function DogComponent (
     {name, age, breed, id, location, picture}:
         DogComponentProps){
-
-    const sorobanContext = useSorobanReact()
 
     return (
     
