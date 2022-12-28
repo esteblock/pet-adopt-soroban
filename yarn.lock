@@ -439,10 +439,10 @@
   dependencies:
     "@soroban-react/core" "^3.0.0"
 
-"@soroban-react/contracts@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@soroban-react/contracts/-/contracts-1.2.1.tgz#18494f2eccce3d83fcc3a490436cf1c584e9df6b"
-  integrity sha512-vckOkdO0vxvbK7HR88AIPt/do7YXJRZSbP7FKGjY+P8ASm6XGRzoNwGam7CgddFdqU23Coi+WXLQA2lxelzwZQ==
+"@soroban-react/contracts@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@soroban-react/contracts/-/contracts-1.4.2.tgz#2c1cd7e8922a845b248ac48d1d6805ebd4b03391"
+  integrity sha512-VGmWGcRNyjcwNmLsBph0UR5DnQm8l+LFCOEPraglthDmoDzq3UeGIUIPIjMCdp7JN0w9vAai5eppXyE3U97LkQ==
   dependencies:
     "@soroban-react/core" "^1.0.4"
     soroban-client "^0.2.1"
@@ -478,10 +478,10 @@
   resolved "https://registry.yarnpkg.com/@soroban-react/types/-/types-1.0.0.tgz#2ee270c97d7fa941c8a756c1c518759af52a1273"
   integrity sha512-N7I0OroI7EvJ16BDSt6wkWGfDBElUZpBUTV+enw9KIL8D/77rhPUtUr1RoqQcXy2TGCFFBtR8RbClVxZXDMbWQ==
 
-"@soroban-react/utils@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@soroban-react/utils/-/utils-1.0.0.tgz#8ebbe199e0a2d83be7a6efa7ee8c16697304ae2d"
-  integrity sha512-n2KyGqD4wD3Dg5p+U1mmXjg9aGLaUGaTyZ1uxrwFgXacvUyfQ2wwBw1JCKiUOqg0fV92BYen2WRhc0gmnbITkQ==
+"@soroban-react/utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@soroban-react/utils/-/utils-1.0.1.tgz#60a66ad83c7158cd9fce90ce58abe766c4208e83"
+  integrity sha512-7QK5M1G8mxE2pAg10NCge2Dq3NARdi6IV1PTmqa5VoOHSEur5zW51MRhrUL0663K5OIF9Y7wjrEfTWUSlbxCPQ==
   dependencies:
     bignumber.js "^9.1.1"
     soroban-client "^0.2.1"
