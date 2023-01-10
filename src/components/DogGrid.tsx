@@ -18,7 +18,7 @@ export default function DogGrid() {
     {pets &&
       pets.map(
         ({id, ...dogProps}: DogComponentProps) =>
-        <DogComponent id={id} {...dogProps}/>
+        <DogComponent id={id} key={id} {...dogProps}/>
         )
       }
   </Grid>   

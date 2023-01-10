@@ -10,22 +10,21 @@ interface IsPetAdoptedProps {
 }
 
 
-export function isPetAdopted ({id, sorobanContext}: IsPetAdoptedProps){
+export function useIsPetAdopted ({id, sorobanContext}: IsPetAdoptedProps){
 //            let id_BN = BigNumber(id)
             let id_scval = numberToU32(id)
             let isAdopted_scval
             let isAdopted 
-            try{
-                isAdopted_scval = useContractValue({
-                    contractId: addresses.pet_adopt_id,
-                    method: 'adopted',
-                    params: [id_scval],
-                    sorobanContext: sorobanContext}).result
+            
+            isAdopted_scval = useContractValue({
+                contractId: addresses.pet_adopt_id,
+                method: 'adopted',
+                params: [id_scval],
+                sorobanContext: sorobanContext}).result
+            if(isAdopted_scval){
                 isAdopted = scvalToBool(isAdopted_scval)
-                console.log("pet id: ", id, " is adopted", isAdopted)
-
             }
-            catch{}  
+            console.log("pet id: ", id, " is adopted", isAdopted)
         return isAdopted
     }
 
