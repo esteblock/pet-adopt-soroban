@@ -46,9 +46,12 @@ export function DogComponent (
           } </Typography>
         </Typography>
       </CardContent>
-      <CardActions>
+      {useIsPetAdopted({id: id, sorobanContext: sorobanContext})  ? <CardActions>
+      🥰🥰🥰
+      </CardActions>: <CardActions>
         <AdoptPetButton id={id}></AdoptPetButton>
-      </CardActions>
+      </CardActions>}
+      
     </Card>
   );
 }

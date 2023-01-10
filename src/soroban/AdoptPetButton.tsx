@@ -2,6 +2,7 @@ import React from 'react'
 import {useSorobanReact } from "@soroban-react/core"
 import Button from '@mui/material/Button';
 import {useSendTransaction, contractTransaction} from '@soroban-react/contracts'
+import {numberToU32} from '@soroban-react/utils'
 import * as SorobanClient from 'soroban-client'
 import addresses from '../soroban/addresses.json'
 
@@ -13,7 +14,8 @@ interface AdoptPetButtonProps {
 
 export function AdoptPetButton ({id}: AdoptPetButtonProps){
     const sorobanContext =  useSorobanReact()
-    const { sendTransaction } = useSendTransaction(undefined, {sorobanContext})
+    console.log("sorobanContext: ", sorobanContext)
+    const { sendTransaction } = useSendTransaction()
     const { activeChain, server, address } = sorobanContext
     
     
@@ -31,9 +33,10 @@ export function AdoptPetButton ({id}: AdoptPetButtonProps){
                 networkPassphrase: activeChain.networkPassphrase,
                 source: source,
                 contractId: addresses.pet_adopt_id,
-                method: 'adopt'})
+                method: 'adopt',
+                params: [numberToU32(id)]})
 
-                const result = await sendTransaction(transaction)
+                const result = await sendTransaction(transaction, {sorobanContext})
                 console.log("adoptPet.tsx:sendTransaction:result: ", result)
             }
             catch(error){
